@@ -1,0 +1,24 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+New
+{% endblock title %}
+
+{% block content %}
+{% if object %}
+    <table width="100%" style="margin-top: 35px">
+        <tr>
+            <td>Заголовок</td>
+            <td>Дата публикации</td>
+            <td>Содержание</td>
+        </tr>
+        <tr>
+            <td>{{ object.name|censor }}</td>
+            <td>{{ object.time_in }}</td>
+            <td>{{ object.description|censor }}</td>
+        </tr>
+    </table>
+{% else %}
+<h2>Новостей нет!</h2>
+{% endif %}
+{% endblock content %}
